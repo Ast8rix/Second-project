@@ -1,3 +1,19 @@
+@keyframes move_bg {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100px 0;
+  }
+}
+@keyframes rotation {
+  from {
+    transition: rotate(0deg);
+  }
+  to {
+    transition: rotate(360deg);
+  }
+}
 html,
 body {
   margin: 0;
@@ -24,12 +40,12 @@ body {
   margin-right: 0;
 }
 
-.transform {
+.keyframes {
   background-color: #02b341;
   color: #fff;
 }
 
-.transform__wrapper {
+.keyframes__wrapper {
   width: 490px;
   margin: auto;
   padding: 50px 0;
@@ -46,7 +62,7 @@ body {
   font-size: 14px;
   margin-top: 35px;
   margin-bottom: 55px;
-  max-width: 385px;
+  max-width: 350px;
 }
 
 .demo {
@@ -56,14 +72,14 @@ body {
 }
 
 .demo__item {
-  background-color: #fff;
+  /*box-sizing: border-box;*/
+  border: 2px solid white;
+  border-radius: 50%;
   width: 240px;
   height: 240px;
   margin-right: 10px;
   margin-top: 10px;
-  display: flex;
-  position: relative;
-  color: #02b341;
+  overflow: hidden;
 }
 
 .demo__item:nth-of-type(2n) {
@@ -75,32 +91,103 @@ body {
   margin-top: 0;
 }
 
-.demo__item-title {
-  font-size: 24px;
-  line-height: 24px;
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  margin: 0;
+.demo__row {
+  height: 64px;
 }
 
-.demo__item_type_blur {
+.dotted {
+  background-color: #eb483f;
+  color: white;
 }
-.demo__item_type_blur:hover {
-  box-shadow: 0px 0px 50px #366c49;
+
+.dotted__wrapper {
+  width: 490px;
+  margin: auto;
+  padding: 50px 0;
+  min-height: 350px;
+  position: relative;
+  overflow: hidden;
 }
-.demo__item_type_shift-shadow {
+
+.animated {
+  width: 490px;
+  height: 350px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translate(0, 50%);
 }
-.demo__item_type_shift-shadow:hover {
-  box-shadow: 10px 10px 10px #366c49;
+
+.star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
-.demo__item_type_linear-gradient {
+
+.star_size_s {
+  width: 310px;
+  height: 310px;
+  margin-left: -155px;
+  margin-top: -155px;
+  animation: rotation 40s linear infinite;
+  /*animation: rotate 40s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;*/
 }
-.demo__item_type_linear-gradient:hover {
-  background-image: linear-gradient(#02b341, #fff);
+
+.star_size_l {
+  width: 420px;
+  height: 420px;
+  margin-left: -210px;
+  margin-top: -210px;
+  animation: rotation 30s linear infinite;
 }
-.demo__item_type_radial-gradient {
+
+.star_size_m {
+  width: 420px;
+  height: 420px;
+  margin-left: -210px;
+  margin-top: -210px;
+  animation: rotation 20s linear infinite;
 }
-.demo__item_type_radial-gradient:hover {
-  background-image: radial-gradient(#02b341 15%, #fff 60%);
+
+.dots {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 490px;
+  height: 460px;
+  margin-top: -245px;
+  margin-left: -230px;
+}
+.dots_size_s {
+  animation: rotation 40s ease-in-out infinite;
+  /*animation: rotate 40s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;*/
+}
+.dots_size_m {
+    animation: rotation 30s ease-in-out infinite;
+}
+.dots_size_l {
+    animation: rotation 20s ease-in-out infinite;
+}
+.demo__row_size_xs {
+  background-image: url(https://pictures.s3.yandex.net/animation_topic/line_xs.svg);
+  animation: move_bg 5s linear infinite alternate;
+  /*animation: move_bg 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;*/
+}
+.demo__row_size_s {
+  background-image: url(https://pictures.s3.yandex.net/animation_topic/line_s.svg);
+  animation: move_bg 3s linear infinite alternate;
+}
+.demo__row_size_m {
+  background-image: url(https://pictures.s3.yandex.net/animation_topic/line_m.svg);
+  animation: move_bg 5s linear infinite alternate;
+}
+.demo__row_size_l {
+  background-image: url(https://pictures.s3.yandex.net/animation_topic/line_l.svg);
+  animation: move_bg 8s linear infinite alternate;
 }
