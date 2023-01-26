@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Трансформации</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Формы ввода и шрифты</title>
     <link
       rel="stylesheet"
       href="https://code.s3.yandex.net/web-code/normalize.css"
@@ -11,56 +11,160 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="header__wrapper">
-        <img
-          src="https://pictures.s3.yandex.net/animation_topic/logo.svg"
-          alt="логотип"
-          class="logo"
-        />
-      </div>
-    </header>
-    <section class="cards">
-      <div class="cards__wrapper">
-        <h2 class="title">Анимации в&nbsp;интерфейсе</h2>
-        <p class="subtitle">
-          Что можно сделать без JavaScript средствами CSS, лучше делать без
-          JavaScript. Попробуйте всё, что вы сейчас изучили, и убедитесь, что
-          возможности немалые.
-        </p>
-        <div class="demo">
-          <div class="demo__item demo__item_character_cousteau">
-            <div class="demo__wrapper demo__wrapper_character_cousteau"></div>
-            <h3 class="demo__item-title">Жак-Ив Кусто́</h3>
-            <p
-              class="demo__item-subtitle demo__item-subtitle_character_cousteau"
-            >
-              Французский исследователь
-            </p>
-          </div>
-          <div class="demo__item demo__item_character_rossie">
-            <h3 class="demo__item-title">Ив Росси</h3>
-            <p class="demo__item-subtitle">швейцарский изобретатель</p>
+    <div class="page">
+      <section class="form">
+        <div class="form__toggle">
+          <img
+            class="form__toggle-image"
+            src="https://pictures.s3.yandex.net/html-forms/close_icon.png"
+          />
+        </div>
+        <div class="form__container">
+          <!--Добавил блок форма, затем разделил линией-->
+          <form class="form__admin">
+            <div class="form__main-container">
+              <!--Добавил заголовок-->
+              <h2 class="form__heading">Задайте параметры</h2>
+              <fieldset
+                class="form__input-container form__input-container_ctrl_texts"
+              >
+                <!-- Добавил 2 поля ввода-->
+                <input type="text" class="form__item form__item_el_heading" />
+                <input
+                  type="text"
+                  class="form__item form__item_el_subheading"
+                />
+                <!-- Добавил поле email-->
+                <input type="email" class="form__item form__item_el_email" />
+              </fieldset>
+              <div class="form__line"></div>
+              <fieldset
+                class="form__input-container form__input-container_ctrl_visual"
+              >
+                <!--Добавил 2 числовых поля-->
+                <input
+                  type="number"
+                  min="24"
+                  max="80"
+                  class="form__item form__item_el_heading-fontsize"
+                /><!-- Добавил минимальное и максимальное значение-->
+                <input
+                  type="number"
+                  min="12"
+                  max="40"
+                  class="form__item form__item_el_text-fontsize"
+                />
+                <!--Добавил датируемое поле-->
+                <input type="date" class="form__item form__item_el_pubdate" />
+              </fieldset>
+              <fieldset
+                class="form__input-container form__input-container_ctrl_additional"
+              >
+                <!--Добавил цветное поле и поле с ползунком-->
+                <input
+                  type="color"
+                  class="form__item form__item_el_text-color"
+                />
+                <input
+                  type="range"
+                  min="30"
+                  max="80"
+                  step="10"
+                  class="form__item form__item_el_content-width"
+                /><!-- Добавил минимальное и максимальное значение-->
+              </fieldset>
+            </div>
+            <fieldset class="form__handlers"></fieldset>
+          </form>
+        </div>
+      </section>
+      <section class="content">
+        <div class="content__container">
+          <header class="content__header">
+            <h1 class="content__heading">Портрет Западной Швейцарии</h1>
+            <h2 class="content__subheading">
+              Примитивист Фиштр расписывает новый бюджетный авиалайнер
+            </h2>
+          </header>
+          <div class="content__image">
             <img
-              src="https://pictures.s3.yandex.net/animation_topic/play_ico.svg"
-              alt="воспроизвести"
-              class="demo__item-ico"
+              class="content__image-item"
+              src="https://pictures.s3.yandex.net/html-forms/BOMBARDIER.jpg"
             />
+            <div class="content__image-copyright">
+              Фото:
+              <a
+                class="content__link"
+                href="https://www.flickr.com/photos/sloppyperfectionist/35863293766/"
+                target="_blank"
+              >
+                Hans-Peter Gauster
+              </a>
+              , "Bombardier CSeries CS300 HB-JCA" © 2017
+              <a
+                class="content__link"
+                href="https://creativecommons.org/licenses/by-sa/2.0/legalcode"
+                target="_blank"
+              >
+                CC BY-SA 2.0
+              </a>
+              &nbsp;&nbsp;
+              <img
+                src="https://pictures.s3.yandex.net/html-forms/BOMBARDIER_CC.svg"
+                alt=""
+                height="10"
+              />
+            </div>
           </div>
-          <div class="demo__item demo__item_character_baumgartner">
-            <h3 class="demo__item-title">Феликс Баумгартнер</h3>
-            <p
-              class="demo__item-subtitle demo__item-subtitle_character_baumgartner"
-            >
-              австрийский парашютист
+          <div class="content__text">
+            <p class="content__paragraph">
+              В конце 2016 года швейцарская авиакомпания Swiss получила свой
+              первый канадский «Бомбардье CS300» для полётов малой и средней
+              дальности. Чтобы придать новой 145-местной машине неповторимую
+              индивидуальность, ливрею заказали живописцу. При условии, что
+              эскиз он выполнит в одиночку и лично поправит роспись, когда её
+              будут наносить на фюзеляж.
+            </p>
+            <p class="content__paragraph">
+              Выбор пал на примитивиста Матиаса Форбаша, работающего под
+              псевдонимом Фиштр. Ему поставили задачу изобразить всё лучшее во
+              франкоговорящей части Швейцарии — горы, озёра, вина, сыры,
+              доброжелательность и свободу. Заказ был выполнен в рекордный срок,
+              всего за 5 месяцев. Самолёт получился похожим на самого художника:
+              такой же добродушный и с улыбкой до ушей.
+            </p>
+            <p class="content__paragraph">
+              С мая 2017 года "Бомбардье" носит имя "Швейцарская Романдия" и
+              регистрационный номер
+              <a
+                class="content__link"
+                href="https://www.flightradar24.com/data/aircraft/hb-jca"
+                target="_blank"
+              >
+                HB-JCA
+              </a>
+              ; совершает в среднем 4 коммерческих полёта в сутки. Его можно
+              видеть в "Домодедово", а также в аэропортах Парижа, Валенсии,
+              Кракова, Берлина, Вены, Загреба, на Майорке, Крите и Сицилии.
+              Самолёт останется в той же ливрее, пока его не купит другая
+              авиакомпания.
             </p>
           </div>
-          <div class="demo__item demo__item_character_starman">
-            <h3 class="demo__item-title">Starman</h3>
-            <p class="demo__item-subtitle">космический манекен</p>
+          <div class="content__date">10.10.18</div>
+          <div class="content__author">
+            Пишите автору на
+            <a
+              class="content__link content__link_type_email"
+              href="mailto:mshifrin@yandex-team.ru"
+            >
+              mshifrin@yandex-team.ru
+            </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <footer class="footer">
+        <div class="footer__container"></div>
+      </footer>
+    </div>
   </body>
 </html>
