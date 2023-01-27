@@ -33,7 +33,8 @@
                 <input
                   type="text"
                   class="form__item form__item_el_subheading"
-                />
+                /><!--Добавил многострочный блок-->
+                <textarea class="form__item form__item_el_main-text"></textarea>
                 <!-- Добавил поле email-->
                 <input type="email" class="form__item form__item_el_email" />
               </fieldset>
@@ -41,6 +42,12 @@
               <fieldset
                 class="form__input-container form__input-container_ctrl_visual"
               >
+                <!--Добавил выпадаюищй список-->
+                <select class="form__item form__item_el_font-family">
+                  <option>IBM Plex Serif</option>
+                  <option>Ubuntu</option>
+                  <option>Istok Web</option>
+                </select>
                 <!--Добавил 2 числовых поля-->
                 <input
                   type="number"
@@ -56,6 +63,15 @@
                 />
                 <!--Добавил датируемое поле-->
                 <input type="date" class="form__item form__item_el_pubdate" />
+                <!--Добавил выпадаюищй список-->
+                <select class="form__item form__item_el_image">
+                  <option>Bombardier CS300</option>
+                  <option>Боинг-777 Хоббит</option>
+                  <option>Тигролёт</option>
+                  <option>
+                    Connected to 01000010 01001100 01010101 01000101
+                  </option>
+                </select>
               </fieldset>
               <fieldset
                 class="form__input-container form__input-container_ctrl_additional"
@@ -74,7 +90,11 @@
                 /><!-- Добавил минимальное и максимальное значение-->
               </fieldset>
             </div>
-            <fieldset class="form__handlers"></fieldset>
+            <fieldset class="form__handlers">
+              <!--Добавил 2 кнопки отправить и сброс-->
+              <input type="submit" class="form__button" />
+              <input type="reset" class="form__button" />
+            </fieldset>
           </form>
         </div>
       </section>
