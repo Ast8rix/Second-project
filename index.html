@@ -29,46 +29,117 @@
                 class="form__input-container form__input-container_ctrl_texts"
               >
                 <!-- Добавил 2 поля ввода-->
-                <input type="text" class="form__item form__item_el_heading" />
+                <label for="heading" class="form__label">Заголовок</label
+                ><!--28.01.2023 ярлык-->
+                <input
+                  type="text"
+                  class="form__item form__item_el_heading"
+                  id="heading"
+                  name="heading"
+                  placeholder="О чём статья?"
+                  required
+                /><!--28.01.2023 добавил индентификатор--><!--28.01.2023 Добавил подсказку в текстовое поле-->
+                <!--28.01.2023 добавил индентификатор-->
+                <label for="subheading" class="form__label">Подзаголовок</label
+                ><!--28.01.2023 ярлык-->
                 <input
                   type="text"
                   class="form__item form__item_el_subheading"
+                  id="subheading"
+                  name="subheading"
+                  placeholder="Краткое описание"
+                  required
                 /><!--Добавил многострочный блок-->
-                <textarea class="form__item form__item_el_main-text"></textarea>
+                <label for="main-text" class="form__label">Текст статьи</label
+                ><!--28.01.2023 ярлык-->
+                <textarea
+                  class="form__item form__item_el_main-text"
+                  id="main-text"
+                  name="main-text"
+                  placeholder="Здесь будет основной текст вашей статьи"
+                  required
+                ></textarea
+                ><!--28.01.2023 добавил индентификатор-->
+                <label for="email" class="form__label">E-mail</label
+                ><!--28.01.2023 ярлык-->
                 <!-- Добавил поле email-->
-                <input type="email" class="form__item form__item_el_email" />
+                <input
+                  type="email"
+                  class="form__item form__item_el_email"
+                  id="email"
+                  name="email"
+                  placeholder="hello@example.com"
+                /><!--28.01.2023 добавил индентификатор-->
               </fieldset>
               <div class="form__line"></div>
               <fieldset
                 class="form__input-container form__input-container_ctrl_visual"
               >
+                <label for="font-family" class="form__label"
+                  >Семейство шрифтов</label
+                ><!--28.01.2023 ярлык-->
                 <!--Добавил выпадаюищй список-->
-                <select class="form__item form__item_el_font-family">
-                  <option>IBM Plex Serif</option>
-                  <option>Ubuntu</option>
-                  <option>Istok Web</option>
+                <select
+                  class="form__item form__item_el_font-family"
+                  id="font-family"
+                  name="font-family"
+                >
+                  <!--28.01.2023 добавил индентификатор-->
+                  <option value="ibm">IBM Plex Serif</option>
+                  <option value="ubuntu">Ubuntu</option>
+                  <option value="istok">Istok Web</option>
                 </select>
+                <label for="heading-font-size" class="form__label"
+                  >Размер текста заголовка</label
+                ><!--28.01.2023 ярлык-->
                 <!--Добавил 2 числовых поля-->
+                <!--28.01.2023 добавил индентификатор-->
                 <input
                   type="number"
                   min="24"
                   max="80"
                   class="form__item form__item_el_heading-fontsize"
+                  id="heading-font-size"
+                  name="heading-font-size"
+                  value="32"
                 /><!-- Добавил минимальное и максимальное значение-->
+                <label for="text-font-size" class="form__label"
+                  >Размер тексат абзаца</label
+                ><!--28.01.2023 ярлык-->
                 <input
                   type="number"
                   min="12"
                   max="40"
                   class="form__item form__item_el_text-fontsize"
+                  id="text-font-size"
+                  name="text-font-size"
+                  value="24"
                 />
+                <label for="pub-date" class="form__label"
+                  >Дата создания статьи</label
+                ><!--28.01.2023 ярлык-->
+                <!--28.01.2023 добавил индентификатор-->
                 <!--Добавил датируемое поле-->
-                <input type="date" class="form__item form__item_el_pubdate" />
+                <input
+                  type="date"
+                  class="form__item form__item_el_pubdate"
+                  id="pub-date"
+                  name="pub-date"
+                />
+                <label for="image" class="form__label">Облоажка статьи</label
+                ><!--28.01.2023 ярлык-->
+                <!--28.01.2023 добавил индентификатор-->
                 <!--Добавил выпадаюищй список-->
-                <select class="form__item form__item_el_image">
-                  <option>Bombardier CS300</option>
-                  <option>Боинг-777 Хоббит</option>
-                  <option>Тигролёт</option>
-                  <option>
+                <select
+                  class="form__item form__item_el_image"
+                  id="image"
+                  name="image"
+                >
+                  <!--28.01.2023 добавил индентификатор-->
+                  <option value="bombardier">Bombardier CS300</option>
+                  <option value="hobbit">Боинг-777 Хоббит</option>
+                  <option value="tiger">Тигролёт</option>
+                  <option value="connected">
                     Connected to 01000010 01001100 01010101 01000101
                   </option>
                 </select>
@@ -76,18 +147,83 @@
               <fieldset
                 class="form__input-container form__input-container_ctrl_additional"
               >
+                <h3 class="form__heading form__heading_type_ctrl-el-heading">
+                  Количество колонок
+                </h3>
+                <!--28.01.2023 Заголовки-->
+                <input
+                  type="radio"
+                  name="number-of-columns"
+                  id="one-column"
+                  class="form__item form__item_el_number-of-columns"
+                  value="one-column"
+                  checked
+                /><!--28.01.2023 Радиокнопки-->
+                <label
+                  for="one-column"
+                  class="form__label form__label_direction_right"
+                  >1</label
+                ><!--28.01.2023 Ярлыки-->
+                <input
+                  type="radio"
+                  name="number-of-columns"
+                  id="two-column"
+                  class="form__item form__item_el_number-of-columns"
+                  value="two-column"
+                />
+                <label
+                  for="two-column"
+                  class="form__label form__label_direction_right"
+                  >2</label
+                >
+                <label for="text-color" class="form__label">Цвет текста</label
+                ><!--28.01.2023 ярлык-->
                 <!--Добавил цветное поле и поле с ползунком-->
                 <input
                   type="color"
                   class="form__item form__item_el_text-color"
+                  id="text-color"
+                  name="text-color"
+                  value="#979797"
                 />
+                <!--28.01.2023 добавил индентификатор-->
                 <input
                   type="range"
                   min="30"
                   max="80"
                   step="10"
                   class="form__item form__item_el_content-width"
-                /><!-- Добавил минимальное и максимальное значение-->
+                />
+                <h3 class="form__heading form__heading_type_ctrl-el-heading">
+                  Дополнительные параметры
+                </h3>
+                <!--28.01.2023 Заголовки-->
+                <input
+                  type="checkbox"
+                  name="extra-option"
+                  id="black-background"
+                  class="form__item form__item_el_extra-options"
+                  value="black-background"
+                /><!--28.01.2023 Радиокнопки-->
+                <label
+                  for="black-background"
+                  class="form__label form__label_direction_right"
+                  >1. Чёрный фон</label
+                ><!--28.01.2023 Ярлыки-->
+                <input
+                  type="checkbox"
+                  name="extra-option"
+                  id="bold-heading"
+                  class="form__item form__item_el_extra-options"
+                  value="bold-heading"
+                  checked
+                />
+                <label
+                  for="bold-heading"
+                  class="form__label form__label_direction_right"
+                  >2. Жирный заголовок</label
+                >
+                <!-- Добавил минимальное и максимальное значение-->
               </fieldset>
             </div>
             <fieldset class="form__handlers">

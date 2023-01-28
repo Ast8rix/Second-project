@@ -126,22 +126,22 @@
   margin: 35px auto 0;
   font-size: 20px;
   line-height: 30px;
+  display: block;
 }
 
 /* Общие стили для всех полей ввода */
-/*
-  .form__item {
-    border: 0;
-    width: 100%;
-    height: 24px;
-    box-sizing: border-box;
-    border-bottom: 1px solid #bcbcc4;
-    background-color: transparent;
-    margin-top: 5px;
-    font-size: 14px;
-    font-family: inherit;
-  }
-  */
+
+.form__item {
+  border: 0;
+  width: 100%;
+  height: 24px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #bcbcc4;
+  background-color: transparent;
+  margin-top: 5px;
+  font-size: 14px;
+  font-family: inherit;
+}
 
 /* Замена цвета внешней линии при фокусе поля ввода */
 
@@ -149,52 +149,51 @@
 
 /* Поля ввода */
 
-/* Селектор класса поля ввода основного текста {
-    background: #fff;
-    height: 150px;
-    font-size: 14px;
-    padding: 6px 6px 4px;
-    border: 1px solid #bcbcc4;
-  }
-  */
+/* Селектор класса поля ввода основного текста*/
+.form__item_el_main-text {
+  background: #fff;
+  height: 150px;
+  font-size: 14px;
+  padding: 6px 6px 4px;
+  border: 1px solid #bcbcc4;
+}
 
-/* Селектор поля ввода с типом "число" {
-    background-color: white;
-    color: black;
-    border: 1px solid #bcbcc4;
-    padding: 0 4px;
-  }
-  */
+/* Селектор поля ввода с типом "число"  */
+.form__item_el_heading-fontsize .form__item_el_text-fontsize {
+  background-color: white;
+  color: black;
+  border: 1px solid #bcbcc4;
+  padding: 0 4px;
+}
 
-/* Селектор поля ввода с типом "дата" {
-    background-color: white;
-    color: black;
-    border: 1px solid #bcbcc4;
-    padding: 0 4px;
-    font-family: 'Alegreya Sans', sans-serif;
-  }
-  */
+/* Селектор поля ввода с типом "дата"  */
+.form__item form__item_el_pubdate {
+  background-color: white;
+  color: black;
+  border: 1px solid #bcbcc4;
+  padding: 0 4px;
+  font-family: "Alegreya Sans", sans-serif;
+}
 
-/* Селектор поля ввода с типом "цвет" {
-    height: 30px;
-    width: 48px;
-    border-bottom: 0;
-    padding: 0;
-  }
-  */
+/* Селектор поля ввода с типом "цвет" */
+.form__item_el_text-color {
+  height: 30px;
+  width: 48px;
+  border-bottom: 0;
+  padding: 0;
+}
 
-/* Селектор поля ввода с типом "диапазон" {
-    width: 144px;
-  }
-  */
+/* Селектор поля ввода с типом "диапазон" */
+.form__item_el_content-width {
+  width: 144px;
+}
 
 /* Поле выпадающего списка с классом form_item */
-/* select.form__item {
-    background-color: white;
-    color: black;
-    border: 1px solid #bcbcc4;
-  }
-  */
+select.form__item {
+  background-color: white;
+  color: black;
+  border: 1px solid #bcbcc4;
+}
 
 /* Селектор поля единичного выбора {
     display: inline-block;
@@ -234,26 +233,29 @@
 }
 
 /* Общие стили для всех кнопок */
-/* .form__button {
-    width: 50%;
-    height: 40px;
-    font-size: 14px;
-    border: 0;
-    margin: 0;
-    padding-bottom: 5px;
-    cursor: pointer;
-    transition: opacity .4s;
-    color: white;
-    font-family: inherit;
-  }
-  
-  .form__button:hover {
-    opacity: .7;
-  }
-  */
+.form__button {
+  width: 50%;
+  height: 40px;
+  font-size: 14px;
+  border: 0;
+  margin: 0;
+  padding-bottom: 5px;
+  cursor: pointer;
+  transition: opacity 0.4s;
+  color: white;
+  font-family: inherit;
+}
+
+.form__button:hover {
+  opacity: 0.7;
+}
+*/
 
 /* Замена цвета внешней линии при фокусе кнопки */
 
+input:focus {
+  outline-color: #fff6c5;
+}
 /* Селектор кнопки отправки данных {
     background-color: #000;
   }
