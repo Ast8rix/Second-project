@@ -141,7 +141,7 @@
   margin-top: 5px;
   font-size: 14px;
   font-family: inherit;
-}
+} 
 
 /* Замена цвета внешней линии при фокусе поля ввода */
 
@@ -159,34 +159,34 @@
 }
 
 /* Селектор поля ввода с типом "число"  */
-.form__item_el_heading-fontsize .form__item_el_text-fontsize {
+.form__item_el_heading-fontsize .form__item_el_text-fontsize .form__item[type='number'] {
   background-color: white;
   color: black;
   border: 1px solid #bcbcc4;
   padding: 0 4px;
-}
+} /*•	29.01.2023 селектор поля ввода с типом «число»;*/
 
 /* Селектор поля ввода с типом "дата"  */
-.form__item form__item_el_pubdate {
+.form__item[type='date'] form__item_el_pubdate {
   background-color: white;
   color: black;
   border: 1px solid #bcbcc4;
   padding: 0 4px;
   font-family: "Alegreya Sans", sans-serif;
-}
+}/*•	29.01.2023 •	селектор поля ввода с типом «дата»;*/
 
 /* Селектор поля ввода с типом "цвет" */
-.form__item_el_text-color {
+.form__item_el_text-color .form__item[type='color'] {
   height: 30px;
   width: 48px;
   border-bottom: 0;
   padding: 0;
-}
+}/*•	29.01.2023 •	селектор поля ввода с типом «цвет»;*/
 
 /* Селектор поля ввода с типом "диапазон" */
-.form__item_el_content-width {
+.form__item_el_content-width .form__item[type='range'] {
   width: 144px;
-}
+}/*•	29.01.2023 •	селектор поля ввода с типом «диапазон»;*/
 
 /* Поле выпадающего списка с классом form_item */
 select.form__item {
@@ -195,26 +195,32 @@ select.form__item {
   border: 1px solid #bcbcc4;
 }
 
-/* Селектор поля единичного выбора {
+/* Селектор поля единичного выбора */
+/*input[type='radio'] делает тоже самое*/
+.form__item[type='radio'] {
     display: inline-block;
     width: 16px;
     height: 16px;
-  }
-  */
+  }/*•	29.01.2023 •	селектор поля единичного выбора;*/
+  
 
-/* Селектор поля единичного выбора со значением атрибута value "two-columns" {
+/* Селектор поля единичного выбора со значением атрибута value "two-columns" */
+/*input[type='radio' value='two-columns'] не по бэму*/ 
+.form__item[type='radio' value='two-columns'] {
     margin-left: 25px;
-  }
-  */
+  }/* 29.01.2023 второе задание*/
+  
 
-/* Селектор поля множественного выбора {
+/* Селектор поля множественного выбора */
+/*input[type='checkbox']*/
+.form__item[type='checkbox'] {
     display: inline-block;
     width: 16px;
     height: 16px;
     vertical-align: middle;
     margin: 0;
-  }
-  */
+  }/*•	29.01.2023 •	селектор поля множественного выбора;*/
+  
 
 .form__label_direction_right {
   display: inline;
@@ -230,6 +236,7 @@ select.form__item {
   width: 320px;
   height: 40px;
   border: 0; /*убрал рамки */
+  font-size: 0;/*29.01.2023 для того чтобы убрать пробел между кнопками отправить и сбросить*/
 }
 
 /* Общие стили для всех кнопок */
@@ -256,15 +263,17 @@ select.form__item {
 input:focus {
   outline-color: #fff6c5;
 }
-/* Селектор кнопки отправки данных {
+/* Селектор кнопки отправки данных */
+/*input[type='submit'] другая запись*/
+.form__button[type='submit'] {
     background-color: #000;
-  }
-  */
+  }/*•	29.01.2023•	селектор кнопки отправки данных;*/
 
-/* Селектор кнопки сброса формы {
+/* Селектор кнопки сброса формы */
+/*input[type='reset'] */
+.form__button[type='reset'] {
     background-color: #ea3a3a;
-  }
-  */
+  }/*•	29.01.2023•	селектор кнопки сброса формы.*/
 
 /* Стили страницы */
 
