@@ -151,31 +151,39 @@
                   Количество колонок
                 </h3>
                 <!--28.01.2023 Заголовки-->
-                <input
-                  type="radio"
-                  name="number-of-columns"
-                  id="one-column"
-                  class="form__item form__item_el_number-of-columns"
-                  value="one-column"
-                  checked
-                /><!--28.01.2023 Радиокнопки-->
                 <label
                   for="one-column"
                   class="form__label form__label_direction_right"
-                  >1</label
+                >
+                  <input
+                    type="radio"
+                    name="number-of-columns"
+                    id="one-column"
+                    class="form__item form__item_el_number-of-columns"
+                    value="one-column"
+                    checked
+                  /><!--28.01.2023 Радиокнопки-->
+                  <span
+                    class="form__pseudo-item form__pseudo-item_type_radio"
+                  ></span>
+                  <span class="form__label-text">1</span> </label
                 ><!--28.01.2023 Ярлыки-->
-                <input
-                  type="radio"
-                  name="number-of-columns"
-                  id="two-columns"
-                  class="form__item form__item_el_number-of-columns"
-                  value="two-columns"
-                />
                 <label
                   for="two-columns"
                   class="form__label form__label_direction_right"
-                  >2</label
                 >
+                  <input
+                    type="radio"
+                    name="number-of-columns"
+                    id="two-columns"
+                    class="form__item form__item_el_number-of-columns"
+                    value="two-columns"
+                  />
+                  <span
+                    class="form__pseudo-item form__pseudo-item_type_radio"
+                  ></span>
+                  <span class="form__label-text">2</span>
+                </label>
                 <label for="text-color" class="form__label">Цвет текста</label
                 ><!--28.01.2023 ярлык-->
                 <!--Добавил цветное поле и поле с ползунком-->
@@ -198,31 +206,40 @@
                   Дополнительные параметры
                 </h3>
                 <!--28.01.2023 Заголовки-->
-                <input
-                  type="checkbox"
-                  name="extra-option"
-                  id="black-background"
-                  class="form__item form__item_el_extra-options"
-                  value="black-background"
-                /><!--28.01.2023 Радиокнопки-->
                 <label
                   for="black-background"
                   class="form__label form__label_direction_right"
-                  >1. Чёрный фон</label
+                >
+                  <input
+                    type="checkbox"
+                    name="extra-option"
+                    id="black-background"
+                    class="form__item form__item_el_extra-options"
+                    value="black-background"
+                  /><!--28.01.2023 Радиокнопки-->
+                  <span
+                    class="form__pseudo-item form__pseudo-item_type_checkbox"
+                  ></span>
+                  <span class="form__label-text">1. Чёрный фон</span> </label
                 ><!--28.01.2023 Ярлыки-->
-                <input
-                  type="checkbox"
-                  name="extra-option"
-                  id="bold-heading"
-                  class="form__item form__item_el_extra-options"
-                  value="bold-heading"
-                  checked
-                />
+                <br>
                 <label
                   for="bold-heading"
                   class="form__label form__label_direction_right"
-                  >2. Жирный заголовок</label
                 >
+                  <input
+                    type="checkbox"
+                    name="extra-option"
+                    id="bold-heading"
+                    class="form__item form__item_el_extra-options"
+                    value="bold-heading"
+                    checked
+                  />
+                  <span
+                    class="form__pseudo-item form__pseudo-item_type_checkbox"
+                  ></span>
+                  <span class="form__label-text">2. Жирный заголовок</span>
+                </label>
                 <!-- Добавил минимальное и максимальное значение-->
               </fieldset>
             </div>
@@ -322,5 +339,6 @@
         <div class="footer__container"></div>
       </footer>
     </div>
+    <script src="..//second-project/script.js"></script>
   </body>
 </html>

@@ -141,11 +141,24 @@
   margin-top: 5px;
   font-size: 14px;
   font-family: inherit;
-} 
+}
 
 /* Замена цвета внешней линии при фокусе поля ввода */
 
 /* Стилизуем плейсхолдеры */
+.form__item::placeholder {
+  font-size: 14px;
+  font-family: 'Alegreya Sans';
+  line-height: 20px;
+  color: #bcbcc4;
+} 
+.form__item::-webkit-input-placeholder {
+  font-size: 14px;
+  font-family: 'Alegreya Sans';
+  line-height: 20px;
+  color: #bcbcc4;
+}
+
 
 /* Поля ввода */
 
@@ -159,7 +172,9 @@
 }
 
 /* Селектор поля ввода с типом "число"  */
-.form__item_el_heading-fontsize .form__item_el_text-fontsize .form__item[type='number'] {
+.form__item_el_heading-fontsize
+  .form__item_el_text-fontsize
+  .form__item[type="number"] {
   background-color: white;
   color: black;
   border: 1px solid #bcbcc4;
@@ -167,27 +182,75 @@
 } /*•	29.01.2023 селектор поля ввода с типом «число»;*/
 
 /* Селектор поля ввода с типом "дата"  */
-.form__item[type='date'] form__item_el_pubdate {
+.form__item[type="date"] form__item_el_pubdate {
   background-color: white;
   color: black;
   border: 1px solid #bcbcc4;
   padding: 0 4px;
   font-family: "Alegreya Sans", sans-serif;
-}/*•	29.01.2023 •	селектор поля ввода с типом «дата»;*/
+} /*•	29.01.2023 •	селектор поля ввода с типом «дата»;*/
 
 /* Селектор поля ввода с типом "цвет" */
-.form__item_el_text-color .form__item[type='color'] {
+.form__item_el_text-color .form__item[type="color"] {
   height: 30px;
   width: 48px;
   border-bottom: 0;
   padding: 0;
-}/*•	29.01.2023 •	селектор поля ввода с типом «цвет»;*/
+} /*•	29.01.2023 •	селектор поля ввода с типом «цвет»;*/
 
 /* Селектор поля ввода с типом "диапазон" */
-.form__item_el_content-width .form__item[type='range'] {
+.form__item_el_content-width .form__item[type="range"] {
   width: 144px;
-}/*•	29.01.2023 •	селектор поля ввода с типом «диапазон»;*/
+} /*•	29.01.2023 •	селектор поля ввода с типом «диапазон»;  ниже новая стилилизация радио и чекбокса*/
+.form__item_el_number-of-columns:checked + .form__pseudo-item_type_radio {
+background-image: url(https://code.s3.yandex.net/web-code/plane.svg);
+}
+.form__item_el_number-of-columns:disabled + .form__pseudo-item_type_radio {
+  border: 1px solid grey;
+}
+.form__item_el_number-of-columns:disabled:checked + .form__pseudo-item_type_radio {
+  background-image: url(https://code.s3.yandex.net/web-code/plane_grey.svg);
+}
+.form__item_el_number-of-columns:focus + .form__pseudo-item_type_radio {
+  box-shadow: 0 0 5px #fff6c5;
+} 
 
+.form__item_el_extra-options:checked + .form__pseudo-item_type_checkbox {
+background-image: url(https://code.s3.yandex.net/web-code/tick.svg);
+} 
+.form__item_el_extra-options:disabled + .form__pseudo-item_type_checkbox {
+  border: 1px solid grey;
+}
+.form__item_el_extra-options:disabled:checked + .form__pseudo-item_type_checkbox {
+  background-image: url(https://code.s3.yandex.net/web-code/plane_grey.svg);
+}
+.form__item_el_extra-options:focus + .form__pseudo-item_type_checkbox {
+  box-shadow: 0 0 5px #fff6c5;
+} 
+.form__item_el_number-of-columns {
+  position: absolute;
+  width: 1px; /* если у элемента не будет размеров, некоторые браузеры посчитают, что его вообще нет */
+  height: 1px;
+  overflow: hidden; /* без этого свойства тоже сработает, но так наверняка. Мы его ещё изучим, оно скрывает элементы, выходящие за границы родителя */
+  clip: rect(0 0 0 0);
+}
+.form__item_el_extra-options {
+  position: absolute;
+  width: 1px; /* если у элемента не будет размеров, некоторые браузеры посчитают, что его вообще нет */
+  height: 1px;
+  overflow: hidden; /* без этого свойства тоже сработает, но так наверняка. Мы его ещё изучим, оно скрывает элементы, выходящие за границы родителя */
+  clip: rect(0 0 0 0);
+}
+.form__pseudo-item {
+  display: inline-block; /* элемент span теперь сможет принимать определённую ширину и высоту */
+  vertical-align: middle; /* элемент и текст будут правильно выровнены по вертикали. Работает в паре с inline-block */
+  width: 16px;
+  height: 16px; /* размеры */
+  border: 1px solid black; /* граница */
+}
+.form__pseudo-item_type_radio {
+  border-radius: 50%;
+}
 /* Поле выпадающего списка с классом form_item */
 select.form__item {
   background-color: white;
@@ -197,22 +260,21 @@ select.form__item {
 
 /* Селектор поля единичного выбора */
 /*input[type='radio'] делает тоже самое*/
-.form__item[type='radio'] {
+/*.form__item[type='radio'] {
     display: inline-block;
     width: 16px;
     height: 16px;
   }/*•	29.01.2023 •	селектор поля единичного выбора;*/
-  
 
 /* Селектор поля единичного выбора со значением атрибута value "two-columns" */
-/*input[type='radio' value='two-columns'] не по бэму*/ 
-.form__item[type='radio' value='two-columns'] {
+/*input[type='radio' value='two-columns'] не по бэму*/
+/*.form__item[type='radio' value='two-columns'] {
     margin-left: 25px;
   }/* 29.01.2023 второе задание*/
-  
 
 /* Селектор поля множественного выбора */
 /*input[type='checkbox']*/
+/*
 .form__item[type='checkbox'] {
     display: inline-block;
     width: 16px;
@@ -220,7 +282,6 @@ select.form__item {
     vertical-align: middle;
     margin: 0;
   }/*•	29.01.2023 •	селектор поля множественного выбора;*/
-  
 
 .form__label_direction_right {
   display: inline;
@@ -236,7 +297,7 @@ select.form__item {
   width: 320px;
   height: 40px;
   border: 0; /*убрал рамки */
-  font-size: 0;/*29.01.2023 для того чтобы убрать пробел между кнопками отправить и сбросить*/
+  font-size: 0; /*29.01.2023 для того чтобы убрать пробел между кнопками отправить и сбросить*/
 }
 
 /* Общие стили для всех кнопок */
@@ -265,15 +326,15 @@ input:focus {
 }
 /* Селектор кнопки отправки данных */
 /*input[type='submit'] другая запись*/
-.form__button[type='submit'] {
-    background-color: #000;
-  }/*•	29.01.2023•	селектор кнопки отправки данных;*/
+.form__button[type="submit"] {
+  background-color: #000;
+} /*•	29.01.2023•	селектор кнопки отправки данных;*/
 
 /* Селектор кнопки сброса формы */
 /*input[type='reset'] */
-.form__button[type='reset'] {
-    background-color: #ea3a3a;
-  }/*•	29.01.2023•	селектор кнопки сброса формы.*/
+.form__button[type="reset"] {
+  background-color: #ea3a3a;
+} /*•	29.01.2023•	селектор кнопки сброса формы.*/
 
 /* Стили страницы */
 
