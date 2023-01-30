@@ -2,343 +2,269 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Формы ввода и шрифты</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Главная страница</title>
     <link
       rel="stylesheet"
       href="https://code.s3.yandex.net/web-code/normalize.css"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div class="page">
-      <section class="form">
-        <div class="form__toggle">
-          <img
-            class="form__toggle-image"
-            src="https://pictures.s3.yandex.net/html-forms/close_icon.png"
+  <body class="root">
+    <main class="content">
+      <form action="/" class="gallery-form">
+        <label class="radio">
+          <input
+            type="radio"
+            name="radio-button"
+            class="radio__box"
+            checked
+            value="auto"
           />
-        </div>
-        <div class="form__container">
-          <!--Добавил блок форма, затем разделил линией-->
-          <form class="form__admin">
-            <div class="form__main-container">
-              <!--Добавил заголовок-->
-              <h2 class="form__heading">Задайте параметры</h2>
-              <fieldset
-                class="form__input-container form__input-container_ctrl_texts"
-              >
-                <!-- Добавил 2 поля ввода-->
-                <label for="heading" class="form__label">Заголовок</label
-                ><!--28.01.2023 ярлык-->
-                <input
-                  type="text"
-                  class="form__item form__item_el_heading"
-                  id="heading"
-                  name="heading"
-                  placeholder="О чём статья?"
-                  required
-                /><!--28.01.2023 добавил индентификатор--><!--28.01.2023 Добавил подсказку в текстовое поле-->
-                <!--28.01.2023 добавил индентификатор-->
-                <label for="subheading" class="form__label">Подзаголовок</label
-                ><!--28.01.2023 ярлык-->
-                <input
-                  type="text"
-                  class="form__item form__item_el_subheading"
-                  id="subheading"
-                  name="subheading"
-                  placeholder="Краткое описание"
-                  required
-                /><!--Добавил многострочный блок-->
-                <label for="main-text" class="form__label">Текст статьи</label
-                ><!--28.01.2023 ярлык-->
-                <textarea
-                  class="form__item form__item_el_main-text"
-                  id="main-text"
-                  name="main-text"
-                  placeholder="Здесь будет основной текст вашей статьи"
-                  required
-                ></textarea
-                ><!--28.01.2023 добавил индентификатор-->
-                <label for="email" class="form__label">E-mail</label
-                ><!--28.01.2023 ярлык-->
-                <!-- Добавил поле email-->
-                <input
-                  type="email"
-                  class="form__item form__item_el_email"
-                  id="email"
-                  name="email"
-                  placeholder="hello@example.com"
-                /><!--28.01.2023 добавил индентификатор-->
-              </fieldset>
-              <div class="form__line"></div>
-              <fieldset
-                class="form__input-container form__input-container_ctrl_visual"
-              >
-                <label for="font-family" class="form__label"
-                  >Семейство шрифтов</label
-                ><!--28.01.2023 ярлык-->
-                <!--Добавил выпадаюищй список-->
-                <select
-                  class="form__item form__item_el_font-family"
-                  id="font-family"
-                  name="font-family"
-                >
-                  <!--28.01.2023 добавил индентификатор-->
-                  <option value="ibm">IBM Plex Serif</option>
-                  <option value="ubuntu">Ubuntu</option>
-                  <option value="istok">Istok Web</option>
-                </select>
-                <label for="heading-font-size" class="form__label"
-                  >Размер текста заголовка</label
-                ><!--28.01.2023 ярлык-->
-                <!--Добавил 2 числовых поля-->
-                <!--28.01.2023 добавил индентификатор-->
-                <input
-                  type="number"
-                  min="24"
-                  max="80"
-                  class="form__item form__item_el_heading-fontsize"
-                  id="heading-font-size"
-                  name="heading-font-size"
-                  value="32"
-                /><!-- Добавил минимальное и максимальное значение-->
-                <label for="text-font-size" class="form__label"
-                  >Размер тексат абзаца</label
-                ><!--28.01.2023 ярлык-->
-                <input
-                  type="number"
-                  min="12"
-                  max="40"
-                  class="form__item form__item_el_text-fontsize"
-                  id="text-font-size"
-                  name="text-font-size"
-                  value="24"
-                />
-                <label for="pub-date" class="form__label"
-                  >Дата создания статьи</label
-                ><!--28.01.2023 ярлык-->
-                <!--28.01.2023 добавил индентификатор-->
-                <!--Добавил датируемое поле-->
-                <input
-                  type="date"
-                  class="form__item form__item_el_pubdate"
-                  id="pub-date"
-                  name="pub-date"
-                />
-                <label for="image" class="form__label">Облоажка статьи</label
-                ><!--28.01.2023 ярлык-->
-                <!--28.01.2023 добавил индентификатор-->
-                <!--Добавил выпадаюищй список-->
-                <select
-                  class="form__item form__item_el_image"
-                  id="image"
-                  name="image"
-                >
-                  <!--28.01.2023 добавил индентификатор-->
-                  <option value="bombardier">Bombardier CS300</option>
-                  <option value="hobbit">Боинг-777 Хоббит</option>
-                  <option value="tiger">Тигролёт</option>
-                  <option value="connected">
-                    Connected to 01000010 01001100 01010101 01000101
-                  </option>
-                </select>
-              </fieldset>
-              <fieldset
-                class="form__input-container form__input-container_ctrl_additional"
-              >
-                <h3 class="form__heading form__heading_type_ctrl-el-heading">
-                  Количество колонок
-                </h3>
-                <!--28.01.2023 Заголовки-->
-                <label
-                  for="one-column"
-                  class="form__label form__label_direction_right"
-                >
-                  <input
-                    type="radio"
-                    name="number-of-columns"
-                    id="one-column"
-                    class="form__item form__item_el_number-of-columns"
-                    value="one-column"
-                    checked
-                  /><!--28.01.2023 Радиокнопки-->
-                  <span
-                    class="form__pseudo-item form__pseudo-item_type_radio"
-                  ></span>
-                  <span class="form__label-text">1</span> </label
-                ><!--28.01.2023 Ярлыки-->
-                <label
-                  for="two-columns"
-                  class="form__label form__label_direction_right"
-                >
-                  <input
-                    type="radio"
-                    name="number-of-columns"
-                    id="two-columns"
-                    class="form__item form__item_el_number-of-columns"
-                    value="two-columns"
-                  />
-                  <span
-                    class="form__pseudo-item form__pseudo-item_type_radio"
-                  ></span>
-                  <span class="form__label-text">2</span>
-                </label>
-                <label for="text-color" class="form__label">Цвет текста</label
-                ><!--28.01.2023 ярлык-->
-                <!--Добавил цветное поле и поле с ползунком-->
-                <input
-                  type="color"
-                  class="form__item form__item_el_text-color"
-                  id="text-color"
-                  name="text-color"
-                  value="#979797"
-                />
-                <!--28.01.2023 добавил индентификатор-->
-                <input
-                  type="range"
-                  min="30"
-                  max="80"
-                  step="10"
-                  class="form__item form__item_el_content-width"
-                />
-                <h3 class="form__heading form__heading_type_ctrl-el-heading">
-                  Дополнительные параметры
-                </h3>
-                <!--28.01.2023 Заголовки-->
-                <label
-                  for="black-background"
-                  class="form__label form__label_direction_right"
-                >
-                  <input
-                    type="checkbox"
-                    name="extra-option"
-                    id="black-background"
-                    class="form__item form__item_el_extra-options"
-                    value="black-background"
-                  /><!--28.01.2023 Радиокнопки-->
-                  <span
-                    class="form__pseudo-item form__pseudo-item_type_checkbox"
-                  ></span>
-                  <span class="form__label-text">1. Чёрный фон</span> </label
-                ><!--28.01.2023 Ярлыки-->
-                <br>
-                <label
-                  for="bold-heading"
-                  class="form__label form__label_direction_right"
-                >
-                  <input
-                    type="checkbox"
-                    name="extra-option"
-                    id="bold-heading"
-                    class="form__item form__item_el_extra-options"
-                    value="bold-heading"
-                    checked
-                  />
-                  <span
-                    class="form__pseudo-item form__pseudo-item_type_checkbox"
-                  ></span>
-                  <span class="form__label-text">2. Жирный заголовок</span>
-                </label>
-                <!-- Добавил минимальное и максимальное значение-->
-              </fieldset>
-            </div>
-            <fieldset class="form__handlers">
-              <!--Добавил 2 кнопки отправить и сброс-->
-              <input type="submit" class="form__button" />
-              <input type="reset" class="form__button" />
-            </fieldset>
-          </form>
-        </div>
+          <span class="radio__span"></span>
+          <span class="radio__text"> Авто </span>
+        </label>
+        <label class="radio">
+          <input
+            type="radio"
+            name="radio-button"
+            class="radio__box"
+            value="nature"
+          />
+          <span class="radio__span"></span>
+          <span class="radio__text"> Природа </span>
+        </label>
+        <label class="radio">
+          <input
+            type="radio"
+            name="radio-button"
+            class="radio__box"
+            value="architecture"
+          />
+          <span class="radio__span"> </span>
+          <span class="radio__text"> Архитектура </span>
+        </label>
+      </form>
+      <section class="gallery">
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/auto-1.jpeg"
+          alt=""
+          data-type="auto"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/auto-2.jpeg"
+          alt=""
+          data-type="auto"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/auto-3.jpeg"
+          alt=""
+          data-type="auto"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/auto-4.jpeg"
+          alt=""
+          data-type="auto"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/auto-5.jpeg"
+          alt=""
+          data-type="auto"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/auto-6.jpeg"
+          alt=""
+          data-type="auto"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/auto-7.jpeg"
+          alt=""
+          data-type="auto"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/auto-8.jpeg"
+          alt=""
+          data-type="auto"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/auto-9.jpeg"
+          alt=""
+          data-type="auto"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/auto-10.jpeg"
+          alt=""
+          data-type="auto"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/auto-11.jpeg"
+          alt=""
+          data-type="auto"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/auto-12.jpeg"
+          alt=""
+          data-type="auto"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/nature-1.jpeg"
+          alt=""
+          data-type="nature"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/nature-2.jpeg"
+          alt=""
+          data-type="nature"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/nature-3.jpeg"
+          alt=""
+          data-type="nature"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/nature-4.jpeg"
+          alt=""
+          data-type="nature"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/nature-5.jpeg"
+          alt=""
+          data-type="nature"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/nature-6.jpeg"
+          alt=""
+          data-type="nature"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/nature-7.jpeg"
+          alt=""
+          data-type="nature"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/nature-8.jpeg"
+          alt=""
+          data-type="nature"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/nature-9.jpeg"
+          alt=""
+          data-type="nature"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/nature-10.jpeg"
+          alt=""
+          data-type="nature"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/nature-11.jpeg"
+          alt=""
+          data-type="nature"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/nature-12.jpg"
+          alt=""
+          data-type="nature"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/architecture-1.jpeg"
+          alt=""
+          data-type="architecture"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/architecture-2.jpeg"
+          alt=""
+          data-type="architecture"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/architecture-3.jpeg"
+          alt=""
+          data-type="architecture"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/architecture-4.jpeg"
+          alt=""
+          data-type="architecture"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/architecture-5.jpeg"
+          alt=""
+          data-type="architecture"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/architecture-6.jpeg"
+          alt=""
+          data-type="architecture"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/architecture-7.jpeg"
+          alt=""
+          data-type="architecture"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/architecture-8.jpeg"
+          alt=""
+          data-type="architecture"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/architecture-9.jpeg"
+          alt=""
+          data-type="architecture"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/architecture-10.jpeg"
+          alt=""
+          data-type="architecture"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/architecture-11.jpeg"
+          alt=""
+          data-type="architecture"
+        />
+        <img
+          class="gallery__image"
+          src="https://code.s3.yandex.net/web-code/grid-layout/architecture-12.jpeg"
+          alt=""
+          data-type="architecture"
+        />
       </section>
-      <section class="content">
-        <div class="content__container">
-          <header class="content__header">
-            <h1 class="content__heading">Портрет Западной Швейцарии</h1>
-            <h2 class="content__subheading">
-              Примитивист Фиштр расписывает новый бюджетный авиалайнер
-            </h2>
-          </header>
-          <div class="content__image">
-            <img
-              class="content__image-item"
-              src="https://pictures.s3.yandex.net/html-forms/BOMBARDIER.jpg"
-            />
-            <div class="content__image-copyright">
-              Фото:
-              <a
-                class="content__link"
-                href="https://www.flickr.com/photos/sloppyperfectionist/35863293766/"
-                target="_blank"
-              >
-                Hans-Peter Gauster
-              </a>
-              , "Bombardier CSeries CS300 HB-JCA" © 2017
-              <a
-                class="content__link"
-                href="https://creativecommons.org/licenses/by-sa/2.0/legalcode"
-                target="_blank"
-              >
-                CC BY-SA 2.0
-              </a>
-              &nbsp;&nbsp;
-              <img
-                src="https://pictures.s3.yandex.net/html-forms/BOMBARDIER_CC.svg"
-                alt=""
-                height="10"
-              />
-            </div>
-          </div>
-          <div class="content__text">
-            <p class="content__paragraph">
-              В конце 2016 года швейцарская авиакомпания Swiss получила свой
-              первый канадский «Бомбардье CS300» для полётов малой и средней
-              дальности. Чтобы придать новой 145-местной машине неповторимую
-              индивидуальность, ливрею заказали живописцу. При условии, что
-              эскиз он выполнит в одиночку и лично поправит роспись, когда её
-              будут наносить на фюзеляж.
-            </p>
-            <p class="content__paragraph">
-              Выбор пал на примитивиста Матиаса Форбаша, работающего под
-              псевдонимом Фиштр. Ему поставили задачу изобразить всё лучшее во
-              франкоговорящей части Швейцарии — горы, озёра, вина, сыры,
-              доброжелательность и свободу. Заказ был выполнен в рекордный срок,
-              всего за 5 месяцев. Самолёт получился похожим на самого художника:
-              такой же добродушный и с улыбкой до ушей.
-            </p>
-            <p class="content__paragraph">
-              С мая 2017 года "Бомбардье" носит имя "Швейцарская Романдия" и
-              регистрационный номер
-              <a
-                class="content__link"
-                href="https://www.flightradar24.com/data/aircraft/hb-jca"
-                target="_blank"
-              >
-                HB-JCA
-              </a>
-              ; совершает в среднем 4 коммерческих полёта в сутки. Его можно
-              видеть в "Домодедово", а также в аэропортах Парижа, Валенсии,
-              Кракова, Берлина, Вены, Загреба, на Майорке, Крите и Сицилии.
-              Самолёт останется в той же ливрее, пока его не купит другая
-              авиакомпания.
-            </p>
-          </div>
-          <div class="content__date">10.10.18</div>
-          <div class="content__author">
-            Пишите автору на
-            <a
-              class="content__link content__link_type_email"
-              href="mailto:mshifrin@yandex-team.ru"
-            >
-              mshifrin@yandex-team.ru
-            </a>
-          </div>
-        </div>
-      </section>
-      <footer class="footer">
-        <div class="footer__container"></div>
-      </footer>
-    </div>
-    <script src="..//second-project/script.js"></script>
+    </main>
+    <script src="script.js"></script>
   </body>
 </html>
